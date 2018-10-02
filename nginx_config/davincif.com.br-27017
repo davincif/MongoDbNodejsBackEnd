@@ -1,0 +1,10 @@
+server {
+	listen 27018;
+
+	root /usr/share/nginx/davincif.com.br;
+
+	server_name davincif.com.br mongodb://davincif.com.br/;
+	location / {
+		proxy_pass http://127.0.0.1:27017;
+	}
+}
