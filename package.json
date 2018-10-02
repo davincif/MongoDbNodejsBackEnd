@@ -1,0 +1,19 @@
+{
+  "name": "davincif-zeropay",
+  "version": "1.0.0",
+  "description": "a project created with the intention of getting inside the zeropay time =)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davincif/MongoDbNodejsBackEnd.git"
+  },
+  "author": "davincif",
+  "license": "zlib-acknowledgement",
+  "bugs": {
+    "url": "https://github.com/davincif/MongoDbNodejsBackEnd/issues"
+  },
+  "homepage": "https://github.com/davincif/MongoDbNodejsBackEnd#readme"
+}
