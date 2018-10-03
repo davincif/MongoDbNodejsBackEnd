@@ -1,0 +1,65 @@
+swagger: '2.0'
+
+info:
+  contact:
+    email: contat-suport@zeropay.com.br
+  description: This is the zeropay's api made by a job candidate
+  license:
+    name: zlib-acknowledgement
+    url: 'https://spdx.org/licenses/zlib-acknowledgement.html'
+  termsOfService: termsOfService
+  title: Zeropay Selection API
+  version: 0.0.1-alpha
+
+paths:
+  /client:
+    post:
+      tags:
+        - client
+      summary: register a new client
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: client
+          description: crete a new client
+          required: true
+          schema:
+            $ref: '#/definitions/ClientInfo'
+      responses:
+        '200':
+          description: The user's authorization token
+        '400':
+          description: Something is wrong with your request
+        '401':
+          description: Access token is missing or invalid
+        '403':
+          description: You're not authorized to perform that action
+
+
+definitions:
+  ClientInfo:
+    type: object
+    required:
+      - name
+      - cpf
+      - birthday
+      - marital_status
+      - address
+      - formal_school
+    properties:
+      name:
+        type: string
+      cpf:
+        type: string
+      birthday:
+        type: string
+        format: DD/MM/YYYY HH:MM:SS
+      marital_status:
+        type: string
+        enum: [never married, married, widowed, divorced, separated]
+      address:
+        type: string
+      formal_school:
+        type: string
+        enum: [no formal, incomplete primary, complete primary, incomplete high school, complete high school, incomplete graduation, graduated, masters degree, doctorship, post doctor]
