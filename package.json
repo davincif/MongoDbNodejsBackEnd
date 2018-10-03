@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/davincif/MongoDbNodejsBackEnd/issues"
   },
-  "homepage": "https://github.com/davincif/MongoDbNodejsBackEnd#readme"
+  "homepage": "https://github.com/davincif/MongoDbNodejsBackEnd#readme",
+  "dependencies": {
+    "mongoose": "^5.3.1"
+  }
 }

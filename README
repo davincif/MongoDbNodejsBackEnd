@@ -1,0 +1,18 @@
+things to remember:
+    JSDoc
+    ./mongod --auth --bind_ip 127.0.0.1 --dbpath ./data/
+    service nginx configtest
+    nginx -t
+    service nginx restart
+
+mongodb adms:
+db.createUser({
+    user: "zeroPayAdmin",
+    pwd: "selection",
+    roles: [
+        { role: "userAdminAnyDatabase", db: "admin" },
+        "readWriteAnyDatabase"
+    ]
+})
+
+db.auth("zeroPayAdmin", "selection")
