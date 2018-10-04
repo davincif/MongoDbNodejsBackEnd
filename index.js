@@ -1,6 +1,8 @@
-const utils = require('./utils');
-const globals = require('./globals');
-const mongoose = require('mongoose');
-const route_client = require('./rotues/client');
+var utils = require('./utils');
+var globals = require('./globals');
+var mongoose = require('mongoose');
+var route_client = require('./routes/client');
+var rounte_insurance = require('./routes/insurance');
 
 route_client.init();
+rounte_insurance.init();

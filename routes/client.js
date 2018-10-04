@@ -1,25 +1,23 @@
 // imports
-const database = require('./db');
-const globals = require('../globals');
-const paths = require('./paths');
-const utils = require('../utils');
-const express = require('express');
-const bodyparser = require('body-parser');
-const mongoose = require('mongoose');
+var database = require('./client_db');
+var globals = require('../globals');
+var paths = require('./paths');
+var utils = require('../utils');
+var express = require('express');
+var bodyparser = require('body-parser');
+var mongoose = require('mongoose');
 var server;
 
 // open db connection
-database.init();
-database.connect();
-
+// database.init();
 
 //starting
 var app = express();
 app.use(bodyparser.json()); //application/json
-app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 
 
-// defining
+// defining routes
 app.post(paths.client, (req, res) => {
 	let maritalEnum = ['never married', 'married', 'widowed', 'divorced', 'separated'];
 	let schoolEnum = ['no formal', 'incomplete primary', 'complete primary', 'incomplete high school', 'complete high school', 'incomplete graduation', 'graduated', 'masters degree', 'doctorship', 'post doctor'];
@@ -239,5 +237,6 @@ app.put(paths.client + '/:cpf', (req, res) => {
 var exports = module.exports = {};
 
 exports.init = function() {
-	server = app.listen(globals.api_port);
+	database.init();
+	server = app.listen(globals.api_port[0].toString());
 }
